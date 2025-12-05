@@ -1,3 +1,4 @@
+pip>=24.0
 alembic==1.17.2
 blinker==1.9.0
 click==8.3.1
