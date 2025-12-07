@@ -11,7 +11,12 @@ migrate = Migrate(app, db)
 
 migrate.init_app(app, db, render_as_batch=True)
 
-CORS(app, resources={r"/api/clients/*": {"origins": "http://localhost:3000"}})
+CORS(app, resources={r"/api/clients/*": {
+    "origins": [
+        "http://localhost:3000",
+        "https://crmtracker.sarankirthic.net/",
+        "https://crmtracker-frontend.vercel.app/"
+    ]}})
 
 from app.routes import tracker
 app.register_blueprint(tracker, url_prefix="/api/clients")
